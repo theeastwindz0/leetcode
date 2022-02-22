@@ -3,7 +3,7 @@
 class Solution {
 public:
     string convertToTitle(int columnNumber) {
-        int d=0,a=0,i=1;
+        int d=0;
         string word="";
         while(columnNumber!=0)
         {
@@ -15,7 +15,6 @@ public:
             
             word=currentWord+word;
             columnNumber=(columnNumber-d)/26; 
-            i++;
             cout<<columnNumber; 
             
         }
