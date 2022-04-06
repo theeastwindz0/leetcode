@@ -4,8 +4,8 @@ public:
         if(mat==target)
             return true;
         int vLen=mat.size();
-        
         int ct0=0;
+        
         while(ct0!=4)
         {
             for(int i=0;i<vLen;i++)
