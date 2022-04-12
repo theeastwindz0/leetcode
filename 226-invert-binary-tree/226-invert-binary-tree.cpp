@@ -12,7 +12,6 @@
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        cout<<"Test"<<endl;
         if(root==NULL) return NULL;
         TreeNode *temp=root->right;
         root->right=invertTree(root->left);
