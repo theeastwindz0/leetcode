@@ -1,7 +1,7 @@
 class MyHashMap {
     
 public:
-    
+    int v1[1000001];
     MyHashMap() {
         fill(v1,v1+1000000,-1);
     }
@@ -17,8 +17,6 @@ public:
     void remove(int key) {
         v1[key]=-1;
     }
-    private:
-    int v1[1000001];
 };
 
 /**
