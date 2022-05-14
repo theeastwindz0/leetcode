@@ -15,12 +15,12 @@ public:
     long long minimumTime(vector<int>& time, int totalTrips) {
         ll left=1,right=1+1e14,ans=0;
         while(left<=right){
-            ll m=(right-left)/2+left;
+            ll m=(left+right)/2;
             ll ct=0;
             fit(time)ct+=m/it;
-            if(ct>=totalTrips){right=m-1;ans=m;}
+            if(ct>=totalTrips)right=m-1;
             else left=m+1;
         }
-        return ans;
+        return left;
     }
 };
