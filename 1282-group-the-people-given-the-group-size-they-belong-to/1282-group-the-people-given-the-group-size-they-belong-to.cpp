@@ -16,8 +16,7 @@ public:
         um<int,v<int>>um1;
         v<v<int>> ans;
         f(0,groupSizes.size()){
-            if(um1.count(groupSizes[i])>0)um1[groupSizes[i]].pb(i);
-            else um1[groupSizes[i]]=v<int>{i};
+            um1[groupSizes[i]].pb(i);
             if(um1[groupSizes[i]].size()==groupSizes[i]){
                 ans.pb(um1[groupSizes[i]]);
                 um1.erase(groupSizes[i]);
