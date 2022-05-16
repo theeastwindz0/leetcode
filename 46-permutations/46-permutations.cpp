@@ -15,14 +15,14 @@ public:
     v<v<int>> ans;
     void solver(int cI,int n,v<int>nums){
         if(cI==n){ans.pb(nums);return;}
-        f(cI,n+1){
+        f(cI,n){
             swap(nums[i],nums[cI]);
             solver(cI+1,n,nums);
             swap(nums[i],nums[cI]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
-        solver(0,nums.size()-1,nums);
+        solver(0,nums.size(),nums);
         return ans;
     }
 };
