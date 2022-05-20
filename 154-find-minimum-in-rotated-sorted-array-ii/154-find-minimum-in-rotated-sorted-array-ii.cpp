@@ -7,7 +7,7 @@ public:
             if(nums[l]<nums[r])return nums[l];
             else if(nums[m]<nums[r])r=m;
             else if(nums[m]>nums[r])l=m+1;
-            else r--;
+            else l++;
         }
         return nums[l];
     }
