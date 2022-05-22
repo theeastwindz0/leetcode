@@ -1,16 +1,15 @@
 class Solution {
 public:
-    vector<string>v1;
-    void helpme(TreeNode *root,string temp){
+    long long ans=0;
+    void helpme(TreeNode *root,int ct,long long temp){
         if(!root)return;
-        if(!root->left && !root->right){temp+=to_string(root->val);v1.push_back(temp);return;}
-        helpme(root->left,temp+to_string(root->val));
-        helpme(root->right,temp+to_string(root->val));
+        int curr=temp;
+        if(!root->left && !root->right){temp=temp*pow(10,ct)+root->val;ans+=temp;return;}
+        helpme(root->left,1,temp*pow(10,ct)+root->val);
+        helpme(root->right,1,temp*pow(10,ct)+root->val);
     }
     int sumNumbers(TreeNode* root) {
-        long long ans=0;
-        helpme(root,"");
-        for(auto it:v1){long long temp=stoi(it);ans+=temp;}
+        helpme(root,0,0);
         return ans;
     }
 };
