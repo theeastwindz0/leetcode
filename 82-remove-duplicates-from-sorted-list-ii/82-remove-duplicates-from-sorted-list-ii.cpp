@@ -15,7 +15,8 @@ public:
         ListNode *dummy=new ListNode();
         dummy->next=head;
         ListNode *pre=dummy,*current=head;
-        while(current!=NULL){
+        cout<<pre->next->val<<endl;
+        while(current){
         if(current->next!=NULL && current->val==current->next->val){
             while(current->next!=NULL && current->val==current->next->val)current=current->next;
             pre->next=current->next;
