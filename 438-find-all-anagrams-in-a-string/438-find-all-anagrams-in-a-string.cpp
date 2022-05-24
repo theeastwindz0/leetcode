@@ -20,9 +20,10 @@ public:
     }
     vector<int> findAnagrams(string s, string p) {
         if(size(p)>size(s))return {};
-        v<int>v1(26,0),v2(26,0);
-        v<int>ans;
+        v<int>v1(26,0),v2(26,0),ans;
+        um<char,int>um1;
         f(0,size(p)){
+            um1[p[i]]=1;
             v1[p[i]-'a']++;
             v2[s[i]-'a']++;
         }
@@ -30,7 +31,7 @@ public:
         f(size(p),size(s)){
             v2[s[i]-'a']++;
             v2[s[i-size(p)]-'a']--;
-            if(fq(v1,v2))ans.pb(i-size(p)+1);
+            if(um1.find(s[i])!=um1.end() && fq(v1,v2))ans.pb(i-size(p)+1);
         }
         return ans;
     }
