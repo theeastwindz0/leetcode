@@ -29,7 +29,7 @@
 class Solution{
 public:
     map<int,int> m1;
-int preInd=0;
+    int preInd=0;
 TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
     f(0,inorder.size())m1[inorder[i]]=i;
     return createTree(preorder,inorder,0,inorder.size() - 1);
